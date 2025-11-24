@@ -1,4 +1,3 @@
-// Example jenkins file
 pipeline {
     agent {
         node {
@@ -26,10 +25,6 @@ pipeline {
             }
             steps {
                 wrap([$class: 'VaultBuildWrapper',
-                    configuration: [
-                        vaultUrl: 'https://vault.devshift.net',
-                        vaultCredentialId: 'vault-creds',
-                    ],
                     vaultSecrets: [
                         [
                             path: 'app-sre/quay/app-sre-push',
